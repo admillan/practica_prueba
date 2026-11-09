@@ -139,6 +139,13 @@ public class mainController {
                     this.setAlertaLabelMensaje(ALERTA_NO_SELECCIONADO,"Campo tipo de Bebida");
                     return;
             }
+            try {
+                this.repository.guardar(bebida);
+                this.actualizarTableview();
+            } catch (PersistenciaException e) {
+                this.setAlertaLabelMensaje(e.getMessage(), "Error al guardar bebida");
+                return;
+            }
 
             this.setAlertaLabelMensaje(ALERTA_EXITO,"Bebida - "+bebida.getNombre());
 
