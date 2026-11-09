@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.tarea_fonda_ep2.controller.mainController">
+   <children>
+      <HBox prefHeight="67.0" prefWidth="843.0">
+         <children>
+            <Label prefHeight="67.0" prefWidth="283.0" text="Fonda Peces en el Río">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="alertaLabel" prefHeight="67.0" prefWidth="551.0" text="Alerta" textFill="RED" visible="false">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <VBox layoutX="13.0" layoutY="61.0" prefHeight="557.0" prefWidth="288.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="285.0" text="Tipo de Bebida">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="tipoChoice" onAction="#onSeleccionarTipo" prefHeight="35.0" prefWidth="292.0">
+
+            </ChoiceBox>
+            <Label prefHeight="25.0" prefWidth="293.0" text="Nombre">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nombreText" />
+            <Label layoutX="10.0" layoutY="70.0" prefHeight="25.0" prefWidth="293.0" text="Volumen (ml)">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="volumenText" layoutX="10.0" layoutY="95.0" />
+            <Label layoutX="10.0" layoutY="130.0" prefHeight="25.0" prefWidth="293.0" text="Stock">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="stockText" layoutX="10.0" layoutY="155.0" />
+            <Label layoutX="10.0" layoutY="250.0" prefHeight="0.0" prefWidth="291.0" text="Bebida sin Alcohol" underline="true">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Azucar por Litro (g/L)" />
+            <TextField fx:id="azucarText" layoutX="10.0" layoutY="215.0">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label layoutX="10.0" layoutY="190.0" prefHeight="0.0" prefWidth="291.0" text="Bebida Alcoholica" underline="true">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="287.0" text="Grados de Alcohol" />
+            <TextField fx:id="gradoText" layoutX="10.0" layoutY="271.0">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </TextField>
+            <CheckBox fx:id="certificadaCheck" mnemonicParsing="false" prefHeight="16.0" prefWidth="291.0" text="Certificada">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </CheckBox>
+            <CheckBox fx:id="ventaCheck" layoutX="10.0" layoutY="467.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="291.0" text="Venta Restringida" />
+            <HBox prefHeight="39.0" prefWidth="291.0">
+               <children>
+                  <Button fx:id="guardarButton" mnemonicParsing="false" onAction="#onGuardar" prefHeight="35.0" prefWidth="152.0" text="GUARDAR">
+
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="limpiarButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onLimpiar" prefHeight="35.0" prefWidth="156.0" text="LIMPIAR">
+
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="316.0" layoutY="87.0" prefHeight="540.0" prefWidth="513.0">
+         <children>
+            <TableView fx:id="tablaBebida" prefHeight="479.0" prefWidth="513.0">
+              <columns>
+                <TableColumn fx:id="tipoColumn" prefWidth="84.0" text="Tipo" />
+                <TableColumn fx:id="nombreColumn" prefWidth="103.0" text="Nombre" />
+                  <TableColumn fx:id="volumenColumn" prefWidth="95.0" text="Volumen" />
+                  <TableColumn fx:id="stockColumn" prefWidth="77.0" text="Stock" />
+                  <TableColumn fx:id="precioColumn" prefWidth="163.0" text="Precio Unitario" />
+              </columns>
+            </TableView>
+            <Button fx:id="eliminarButton" mnemonicParsing="false" onAction="#onEliminar" prefHeight="35.0" prefWidth="131.0" text="ELIMINAR">
+               <VBox.margin>
+                  <Insets left="380.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children></VBox>
+   </children>
+</AnchorPane>
